@@ -4,30 +4,30 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 
 TOKEN = os.getenv("BOT_TOKEN")
 
-LINK_ABBONAMENTO = "https://im.page/telegramchannel?utm_source=im_page_share"
+LINK_ABBONAMENTO = "https://bit.ly/4aGlMn4"
 LINK_ALICE = "https://t.me/Aliceunanessuna"
-LINK_ZONAGIOCO = "https://www.zonagioco.it/landing/servicelink?tracking=BackOfficeLink&agent=635756&page=register.html"
+LINK_ZONAGIOCO = "https://bit.ly/4r1LVSc"
 
-MESSAGGIO_BENVENUTO = """1️⃣ OPZIONE BASIC
+MESSAGGIO_BENVENUTO = """1️⃣ OPZIONE 
+👉 Clicca opzione 1 nei bottoni sotto
+💶 Paga: 12€
 🎁 Ricevi:
 🔓 Accesso al Gruppo Privato
 ⏳ Durata: 1 mese
-💶 Pagamento: 12€
 
-2️⃣ OPZIONE PLUS
+2️⃣ OPZIONE 
+👉 Clicca opzione 2 nei bottoni sotto ti registri, completi la registrazione
+💶 Versa 20€
 🎁 Ricevi:
-🔓 Accesso al Gruppo Privato per 2 mesi
+🔓 Accesso al Gruppo Privato
+⏳ Durata: 2 mesi
 🎡 1 giro di ruota gratuito
-👉 Cliccando qui ti registri al nostro sito di gioco
-📝 Completi la registrazione
-💶 Versi 20€
 
-3️⃣ OPZIONE PLAY
+3️⃣ OPZIONE 
+👉 Clicca opzione 3 nei bottoni sotto ti registri, completi la registrazione
+💶 Versa 20€
 🎁 Ricevi:
-🎡 3 giri di ruota
-👉 Cliccando qui ti registri al nostro sito di gioco
-📝 Completi la registrazione
-💶 Versi 20€
+🎡 3 giri di ruota gratuiti
 
 ⚠️ L'accesso e i bonus verranno attivati solo dopo verifica del pagamento e della registrazione (dove richiesta)"""
 
@@ -36,9 +36,9 @@ MESSAGGIO_RUOTA = "Ciao! 😘 registrati subito a Zona gioco ➡️ versa 20€,
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        [InlineKeyboardButton("1️⃣ OPZIONE BASIC", url=LINK_ABBONAMENTO)],
-        [InlineKeyboardButton("2️⃣ OPZIONE PLUS", callback_data="plus")],
-        [InlineKeyboardButton("3️⃣ OPZIONE PLAY", callback_data="play")],
+        [InlineKeyboardButton("1️⃣ OPZIONE", url=LINK_ABBONAMENTO)],
+        [InlineKeyboardButton("2️⃣ OPZIONE", callback_data="plus")],
+        [InlineKeyboardButton("3️⃣ OPZIONE", callback_data="play")],
     ]
     await update.message.reply_text(
         MESSAGGIO_BENVENUTO,
