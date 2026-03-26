@@ -23,12 +23,6 @@ MSG_2 = """2️⃣ OPZIONE
 ⏳ Durata: 2 mesi
 🎡 1 giro di ruota gratuito"""
 
-MSG_3 = """3️⃣ OPZIONE 
-👉 Clicca il bottone opzione 3 ti registri, completi la registrazione
-💶 Versa 20€
-🎁 Ricevi:
-🎡 3 giri di ruota gratuiti"""
-
 MESSAGGIO_RUOTA = "Ciao! 😘 registrati subito a Zona gioco ➡️ versa 20€, dopodiché contattami per la prova d'acquisto e otterrai subito i tuoi premi 🎁"
 
 
@@ -38,9 +32,6 @@ async def send_menu(message):
 
     kb2 = [[InlineKeyboardButton("2️⃣ OPZIONE", callback_data="plus")]]
     await message.reply_text(MSG_2, reply_markup=InlineKeyboardMarkup(kb2))
-
-    kb3 = [[InlineKeyboardButton("3️⃣ OPZIONE", callback_data="play")]]
-    await message.reply_text(MSG_3, reply_markup=InlineKeyboardMarkup(kb3))
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -72,7 +63,7 @@ def main():
     app = Application.builder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(menu_handler, pattern="^menu$"))
-    app.add_handler(CallbackQueryHandler(button_handler, pattern="^(plus|play)$"))
+    app.add_handler(CallbackQueryHandler(button_handler, pattern="^plus$"))
     print("Bot avviato! 🚀")
     app.run_polling()
 
