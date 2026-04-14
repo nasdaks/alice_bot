@@ -10,7 +10,7 @@ LINK_ZONAGIOCO = "https://bit.ly/4r1LVSc"
 
 MSG_1 = """1️⃣ OPZIONE 
 👉 Clicca il bottone opzione 1
-💶 Paga: 12€
+💶 Paga: 7.99€
 🎁 Ricevi:
 🔓 Accesso al Gruppo Privato
 ⏳ Durata: 1 mese"""
